@@ -20,13 +20,20 @@ Retrieve docs
 """
 @app.route("/<author_id>/docs")
 def docs(author_id):
+    """
+        http://localhost:5000/1998/docs
+    """
     docs = []
-    print "--------------------"
+    # print "--------------------"
     # print docs_by_author(g.couch)
+    # print "--------------------"
     # for row in docs_by_author(g.couch)[author_id]:
     for row in docs_by_author(g.couch):
-	print row.value['anio_mad'], author_id, row.value['anio_mad'] == author_id
-	print row.value['anio_mad'].__class__, author_id.__class__
+	print "-----------------"
+        print row.value
+	print "-----------------"
+	# print row.value['anio_mad'], author_id, row.value['anio_mad'] == author_id
+	# print row.value['anio_mad'].__class__, author_id.__class__
 	try:
 	    author_id = int(author_id)
 		
